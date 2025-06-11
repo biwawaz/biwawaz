@@ -1,163 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Playfair+Display:wght@600&family=Quicksand:wght@500&display=swap');
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  font-family: 'Quicksand', 'Roboto', sans-serif;
-  margin: 0;
+/* Tambahan agar foto tetap di kanan dan tidak turun */
+.content-wrapper {
   display: flex;
-  flex-direction: column;
-  background-color: #fffafa;
-}
-header.navbar-container {
-  max-width: 1200px;
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 4rem;
-  background-color: #fff0f5;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-header.navbar-container .logo h1 {
-  font-size: 1.5rem;
-  font-family: 'Playfair Display', serif;
-  color: #cc3366;
-  margin: 0;
+/* sticky supaya foto tetap di tempatnya */
+.content-image.sticky {
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
 }
 
-.nav-list ul {
+/* container member */
+.member-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  margin-top: 2rem;
+  visibility: hidden; /* akan diubah jadi visible saat tombol diklik */
 }
 
-.nav-list a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #333;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  transition: all 0.2s ease-in-out;
-}
-
-.nav-list a:hover {
-  background-color: #f49ac2;
-  color: white;
-}
-
-main {
-  max-width: 1200px;
-  width: 100%;
-  margin-inline: auto;
-  padding: 2rem 4rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-main .content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-main .content .content-description {
-  flex: 1;
-}
-
-main .content .content-description .tittle {
-  font-size: 3.5rem;
-  margin-block: 1rem;
-  color: #cc3366;
-}
-
-main .content .content-description p {
-  line-height: 1.7rem;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-main .content .content-description button {
-  padding: 0.8rem 2.5rem;
-  margin-block-start: 1rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-  font-family: 'Calibri', 'Quicksand';
-  color: black;
-  border: 3px solid transparent;
-  border-radius: 999px;
-  background-color: pink;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255,182,193,0.4);
-}
-
-main .content .content-description button:hover {
-  border: 3px solid #f49ac2;
-  color: #ffb6c1;
-  background-color: transparent;
-}
-
-main .content .content-image {
-  flex: 1;
-  display: flex;
-}
-
-main .content .content-image img {
-  margin: auto;
-  min-width: 250px;
-  width: 100%;
-  max-width: 350px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* BMI SECTION */
-.bmi-section {
-  width: 100%;
-  margin-top: 4rem;
-  padding: 3rem 2rem;
-  background: linear-gradient(to right, #ffe6f0, #fff);
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+.member-box {
+  width: 220px;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #fff0f5;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   text-align: center;
-  margin-bottom: 4rem;
 }
 
-.bmi-section h2 {
-  font-size: 2rem;
+.member-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
   margin-bottom: 1rem;
+}
+
+.member-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
   color: #cc3366;
 }
 
-/* Responsive Layout */
+.member-box p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Responsive tweak */
 @media (max-width: 768px) {
-  main .content {
+  .content-wrapper {
     flex-direction: column;
-    text-align: center;
   }
 
-  main .content .content-description .tittle {
-    font-size: 2.5rem;
-  }
-
-  main .content .content-image img {
-    width: 100%;
-  }
-
-  main {
-    padding: 1rem 2rem;
+  .content-image.sticky {
+    position: static;
+    top: unset;
   }
 }
