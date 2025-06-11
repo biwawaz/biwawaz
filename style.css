@@ -13,6 +13,9 @@ body {
   background-color: #fffafa;
 }
 
+nav ul {list-style-type:none;
+}
+
 main {
   max-width: 1200px;
   width: 100%;
