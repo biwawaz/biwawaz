@@ -56,18 +56,11 @@ main {
   margin: 2rem auto;
   padding: 0 2rem;
   flex: 1;
+  position: relative;
 }
 
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.content-description {
-  flex: 1;
+.content-wrapper {
+  padding-right: 320px; /* kasih ruang buat foto grup */
 }
 
 .tittle {
@@ -95,23 +88,21 @@ button#btn-know {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: 0.3s;
+  margin-bottom: 1rem;
 }
 
 button#btn-know:hover {
   background-color: #cc3366;
 }
 
-.content-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.content-image img {
-  width: 100%;
-  max-width: 350px;
+.group-photo {
+  position: absolute;
+  top: 130px;
+  right: 50px;
+  max-width: 260px;
   border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .member-container {
@@ -120,7 +111,7 @@ button#btn-know:hover {
   gap: 1.5rem;
   margin-top: 2rem;
   justify-content: center;
-  visibility: visible;
+  visibility: hidden;
 }
 
 .member-box {
@@ -130,6 +121,11 @@ button#btn-know:hover {
   text-align: center;
   width: 220px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.member-box:hover {
+  transform: translateY(-5px);
 }
 
 .member-box img {
@@ -152,7 +148,6 @@ button#btn-know:hover {
   color: #555;
 }
 
-/* BMI */
 .bmi-section {
   background-color: #fffafc;
   padding: 3rem 2rem;
@@ -171,12 +166,19 @@ button#btn-know:hover {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    text-align: center;
+  .content-wrapper {
+    padding-right: 0;
   }
 
-  .content-image img {
+  .group-photo {
+    position: static;
+    display: block;
+    margin: 2rem auto;
     max-width: 80%;
+  }
+
+  .content-description,
+  .member-container {
+    text-align: center;
   }
 }
