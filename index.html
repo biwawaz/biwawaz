@@ -6,82 +6,6 @@
   <title>Kelompok 4 - Biwawaz</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Playfair+Display:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background-color: #fff6f8;
-      margin: 0;
-      padding: 0;
-      color: #444;
-    }
-
-    .member-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-  justify-content: center;
-  visibility: hidden;
-  max-width: 1200px;
-  margin-inline: auto;
-}
-
-  .member-box {
-  width: 250px; 
-  background-color: #ffe1eb;
-  border-radius: 20px;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 8px 16px rgba(255, 182, 193, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
-}
-
-    .member-box:hover {
-      transform: scale(1.05);
-    }
-
-    .member-box img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      border: 3px solid white;
-      box-shadow: 0 0 0 4px #ffa8c8;
-    }
-
-    .member-box h3 {
-      font-size: 1.3rem;
-      color: #cc2e5d;
-      margin: 10px 0 5px;
-    }
-
-    .member-box p {
-      font-size: 0.95rem;
-      color: #5f5f5f;
-    }
-
-    #btn-know {
-      margin-top: 1rem;
-      padding: 12px 20px;
-      background-color: #ffa8c8;
-      border: none;
-      border-radius: 25px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(255, 174, 201, 0.5);
-      transition: background-color 0.3s;
-    }
-
-    #btn-know:hover {
-      background-color: #ff8cb3;
-    }
-  </style>
 </head>
 
 <body>
@@ -97,22 +21,19 @@
     </ul>
   </nav>
 </header>
-  
+
 <main>
   <div class="content">
     <div class="content-description">
       <h1 class="tittle">BIWAWAZ — Kelompok 4</h1>
       <p>
-       Biwawaz was born out of togetherness. It’s more than just a mix of letters from our 	names. It’s a reflection of who we are, and 	how we complete each other. Each of 	us brings our own story, color, and way of thinking. And when all those pieces come 	together, 	something beautiful takes shape, something none of us could build 	alone.
-          Biwawaz is a small symbol of collaboration, full of laughter, spontaneous ideas, 	and dreams slowly coming to life.
-          We’re working on something meaningful, something we’re pouring our hearts into.
-          Not just for us to remember, but for anyone who wants to be part of the journey.
-          Thanks for being here. Biwawaz is just getting started, and we’re glad you’re 	with us.
-
+        Biwawaz was born out of togetherness. It’s more than just a mix of letters from our names. It’s a reflection of who we are, and how we complete each other. Each of us brings our own story, color, and way of thinking. And when all those pieces come together, something beautiful takes shape, something none of us could build alone.
+        Biwawaz is a small symbol of collaboration, full of laughter, spontaneous ideas, and dreams slowly coming to life.
+        We’re working on something meaningful, something we’re pouring our hearts into.
+        Not just for us to remember, but for anyone who wants to be part of the journey.
+        Thanks for being here. Biwawaz is just getting started, and we’re glad you’re with us.
       </p>
       <button id="btn-know">Let's get to know each other</button>
-
-      <!-- Container anggota -->
       <div id="member-container" class="member-container"></div>
     </div>
 
@@ -133,7 +54,7 @@
 </main>
 
 <script>
-  document.getElementById('btn-know').addEventListener('click', function() {
+  document.getElementById('btn-know').addEventListener('click', function () {
     const container = document.getElementById('member-container');
     container.style.visibility = 'visible';
 
@@ -141,7 +62,7 @@
       { name: 'Amirah Rajwa R', description: '"Programmer membuat, menguji, dan menyempurnakan program sambil bekerja sama dengan tim."', imgSrc: 'img/wawa.png' },
       { name: 'Shanaz Althaafunnisaa', description: 'Bertugas menulis kode web agar berfungsi dengan baik, termasuk tombol, menu, dan sinkronisasi data.', imgSrc: 'img/shanaz.png' },
       { name: 'Sabrina Aurelia P', description: 'Tugasnya menyampaikan informasi mengenai suatu produk secara menarik.', imgSrc: 'img/sabrina.png' },
-      { name: 'Ratu Flora P', description: 'membuat konten yang menarik dan berkualitas untuk dipublikasikan di berbagai platform media sosial', imgSrc: 'img/ratu.png' }
+      { name: 'Ratu Flora P', description: 'Membuat konten menarik untuk berbagai media sosial.', imgSrc: 'img/ratu.png' }
     ];
 
     container.innerHTML = '';
