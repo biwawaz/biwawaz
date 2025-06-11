@@ -6,7 +6,84 @@
   <title>Kelompok 4 - Biwawaz</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Playfair+Display:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff6f8;
+      margin: 0;
+      padding: 0;
+      color: #444;
+    }
+
+    .member-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .member-box {
+      width: 230px;
+      background-color: #ffe1eb;
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 8px 16px rgba(255, 182, 193, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .member-box:hover {
+      transform: scale(1.05);
+    }
+
+    .member-box img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      border: 3px solid white;
+      box-shadow: 0 0 0 4px #ffa8c8;
+    }
+
+    .member-box h3 {
+      font-size: 1.3rem;
+      color: #cc2e5d;
+      margin: 10px 0 5px;
+    }
+
+    .member-box p {
+      font-size: 0.95rem;
+      color: #5f5f5f;
+    }
+
+    #btn-know {
+      margin-top: 1rem;
+      padding: 12px 20px;
+      background-color: #ffa8c8;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 174, 201, 0.5);
+      transition: background-color 0.3s;
+    }
+
+    #btn-know:hover {
+      background-color: #ff8cb3;
+    }
+  </style>
 </head>
+
+<body>
 <header class="navbar-container">
   <div class="logo">
     <h1>BIWAWAZ</h1>
@@ -20,34 +97,65 @@
   </nav>
 </header>
   
-  <main>
-    <div class="content">
-      <div class="content-description">
-        <h1 class="tittle">BIWAWAZ — Kelompok 4</h1>
-        <p>
-          Biwawaz was born out of togetherness. It’s more than just a mix of letters from our names. It’s a reflection of who we are, and how we complete each other. Each of us brings our own story, color, and way of thinking. And when all those pieces come together, something beautiful takes shape, something none of us could build alone.
-          Biwawaz is a small symbol of collaboration, full of laughter, spontaneous ideas, and dreams slowly coming to life.
+<main>
+  <div class="content">
+    <div class="content-description">
+      <h1 class="tittle">BIWAWAZ — Kelompok 4</h1>
+      <p>
+       Biwawaz was born out of togetherness. It’s more than just a mix of letters from our 	names. It’s a reflection of who we are, and 	how we complete each other. Each of 	us brings our own story, color, and way of thinking. And when all those pieces come 	together, 	something beautiful takes shape, something none of us could build 	alone.
+          Biwawaz is a small symbol of collaboration, full of laughter, spontaneous ideas, 	and dreams slowly coming to life.
           We’re working on something meaningful, something we’re pouring our hearts into.
           Not just for us to remember, but for anyone who wants to be part of the journey.
-          Thanks for being here. Biwawaz is just getting started, and we’re glad you’re with us.
-        </p>
-        <button>Let's get to know each other</button>
-      </div>
-      <div class="content-image">
-        <img src="img/fotber4.png" alt="profile" />
-      </div>
+          Thanks for being here. Biwawaz is just getting started, and we’re glad you’re 	with us.
+
+      </p>
+      <button id="btn-know">Let's get to know each other</button>
+
+      <!-- Container anggota -->
+      <div id="member-container" class="member-container"></div>
     </div>
 
-    <section class="bmi-section">
-      <h2>Apakah berat badanmu sudah ideal?</h2>
-      <iframe 
-        src="https://biwawazz-BMI-kalkulator.hf.space" 
-        width="100%" 
-        height="600px" 
-        style="border:none; border-radius: 10px;">
-      </iframe>
-    </section>
-  </main>
+    <div class="content-image">
+      <img src="img/fotber4.png" alt="profile" />
+    </div>
+  </div>
+
+  <section class="bmi-section">
+    <h2>Apakah berat badanmu sudah ideal?</h2>
+    <iframe 
+      src="https://biwawazz-BMI-kalkulator.hf.space" 
+      width="100%" 
+      height="600px" 
+      style="border:none; border-radius: 10px;">
+    </iframe>
+  </section>
+</main>
+
+<script>
+  document.getElementById('btn-know').addEventListener('click', function() {
+    const container = document.getElementById('member-container');
+    container.style.visibility = 'visible';
+
+    const members = [
+      { name: 'Amirah Rajwa R', description: 'Progammer menciptakan dan mengembangkan program, melakukan pengujian dan debugging, mengintegrasikan backend dan frontend, menyusun dokumentasi, dan berkoordinasi dengan tim desain.', imgSrc: 'img/wafa.jpg' },
+      { name: 'Shanaz Althaafunnisaa', description: 'Bertugas untuk membuat kode-kode program sebuah web. Kode-kode program tersebut nantinya harus bisa digunakan dengan baik oleh pengguna website. Maka dari itu, berbagai fungsi dalam web harus benar-benar diperhatikan, seperti fungsi tombol, menu, hingga sinkronisasi data', imgSrc: 'img/azzahra.jpg' },
+      { name: 'Sabrina Aurelia P', description: 'Tugasnya menyampaikan informasi mengenai suatu produk secara menarik dengan mengakomodasi keinginan klien.', imgSrc: 'img/zahra.jpg' },
+      { name: 'Ratu Flora P', description: 'membuat konten yang menarik dan berkualitas untuk dipublikasikan di berbagai platform media sosial', imgSrc: 'img/biwa.jpg' }
+    ];
+
+    container.innerHTML = '';
+    members.forEach(member => {
+      let box = document.createElement('div');
+      box.className = 'member-box';
+      box.innerHTML = `
+        <img src="${member.imgSrc}" alt="${member.name}" />
+        <h3>${member.name}</h3>
+        <p>${member.description}</p>
+      `;
+      container.appendChild(box);
+    });
+  });
+</script>
 
 </body>
 </html>
