@@ -9,75 +9,74 @@
 </head>
 
 <body>
-<header class="navbar-container">
-  <div class="logo">
-    <h1>BIWAWAZ</h1>
-  </div>
-  <nav class="nav-list">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Process Design</a></li>
-      <li><a href="#">Product</a></li>
-    </ul>
-  </nav>
-</header>
+  <header class="navbar-container">
+    <div class="logo">
+      <h1>BIWAWAZ</h1>
+    </div>
+    <nav class="nav-list">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Process Design</a></li>
+        <li><a href="#">Product</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <div class="content">
-    <div class="content-description">
-      <h1 class="tittle">BIWAWAZ — Kelompok 4</h1>
-      <p>
-        Biwawaz was born out of togetherness. It’s more than just a mix of letters from our names. It’s a reflection of who we are, and how we complete each other. Each of us brings our own story, color, and way of thinking. And when all those pieces come together, something beautiful takes shape, something none of us could build alone.
-        Biwawaz is a small symbol of collaboration, full of laughter, spontaneous ideas, and dreams slowly coming to life.
-        We’re working on something meaningful, something we’re pouring our hearts into.
-        Not just for us to remember, but for anyone who wants to be part of the journey.
-        Thanks for being here. Biwawaz is just getting started, and we’re glad you’re with us.
-      </p>
-      <button id="btn-know">Let's get to know each other</button>
-      <div id="member-container" class="member-container"></div>
+  <main>
+    <div class="content-wrapper">
+      <div class="content-description">
+        <h1 class="tittle">BIWAWAZ — Kelompok 4</h1>
+        <p>
+          Biwawaz was born out of togetherness. It’s more than just a mix of letters from our names. It’s a reflection of who we are, and how we complete each other. Each of us brings our own story, color, and way of thinking. And when all those pieces come together, something beautiful takes shape, something none of us could build alone.
+          Biwawaz is a small symbol of collaboration, full of laughter, spontaneous ideas, and dreams slowly coming to life.
+          We’re working on something meaningful, something we’re pouring our hearts into.
+          Not just for us to remember, but for anyone who wants to be part of the journey.
+          Thanks for being here. Biwawaz is just getting started, and we’re glad you’re with us.
+        </p>
+        <button id="btn-know">Let's get to know each other</button>
+        <div id="member-container" class="member-container"></div>
+      </div>
+
+      <div class="content-image sticky">
+        <img src="img/fotber4.png" alt="profile" />
+      </div>
     </div>
 
-    <div class="content-image">
-      <img src="img/fotber4.png" alt="profile" />
-    </div>
-  </div>
+    <section class="bmi-section">
+      <h2>Apakah berat badanmu sudah ideal?</h2>
+      <iframe 
+        src="https://biwawazz-BMI-kalkulator.hf.space" 
+        width="100%" 
+        height="600px" 
+        style="border:none; border-radius: 10px;">
+      </iframe>
+    </section>
+  </main>
 
-  <section class="bmi-section">
-    <h2>Apakah berat badanmu sudah ideal?</h2>
-    <iframe 
-      src="https://biwawazz-BMI-kalkulator.hf.space" 
-      width="100%" 
-      height="600px" 
-      style="border:none; border-radius: 10px;">
-    </iframe>
-  </section>
-</main>
+  <script>
+    document.getElementById('btn-know').addEventListener('click', function () {
+      const container = document.getElementById('member-container');
+      container.style.visibility = 'visible';
 
-<script>
-  document.getElementById('btn-know').addEventListener('click', function () {
-    const container = document.getElementById('member-container');
-    container.style.visibility = 'visible';
+      const members = [
+        { name: 'Amirah Rajwa R', description: '"Programmer membuat, menguji, dan menyempurnakan program sambil bekerja sama dengan tim."', imgSrc: 'img/wawa.png' },
+        { name: 'Shanaz Althaafunnisaa', description: 'Bertugas menulis kode web agar berfungsi dengan baik, termasuk tombol, menu, dan sinkronisasi data.', imgSrc: 'img/shanaz.png' },
+        { name: 'Sabrina Aurelia P', description: 'Tugasnya menyampaikan informasi mengenai suatu produk secara menarik.', imgSrc: 'img/sabrina.png' },
+        { name: 'Ratu Flora P', description: 'Membuat konten menarik untuk berbagai media sosial.', imgSrc: 'img/ratu.png' }
+      ];
 
-    const members = [
-      { name: 'Amirah Rajwa R', description: '"Programmer membuat, menguji, dan menyempurnakan program sambil bekerja sama dengan tim."', imgSrc: 'img/wawa.png' },
-      { name: 'Shanaz Althaafunnisaa', description: 'Bertugas menulis kode web agar berfungsi dengan baik, termasuk tombol, menu, dan sinkronisasi data.', imgSrc: 'img/shanaz.png' },
-      { name: 'Sabrina Aurelia P', description: 'Tugasnya menyampaikan informasi mengenai suatu produk secara menarik.', imgSrc: 'img/sabrina.png' },
-      { name: 'Ratu Flora P', description: 'Membuat konten menarik untuk berbagai media sosial.', imgSrc: 'img/ratu.png' }
-    ];
-
-    container.innerHTML = '';
-    members.forEach(member => {
-      let box = document.createElement('div');
-      box.className = 'member-box';
-      box.innerHTML = `
-        <img src="${member.imgSrc}" alt="${member.name}" />
-        <h3>${member.name}</h3>
-        <p>${member.description}</p>
-      `;
-      container.appendChild(box);
+      container.innerHTML = '';
+      members.forEach(member => {
+        let box = document.createElement('div');
+        box.className = 'member-box';
+        box.innerHTML = `
+          <img src="${member.imgSrc}" alt="${member.name}" />
+          <h3>${member.name}</h3>
+          <p>${member.description}</p>
+        `;
+        container.appendChild(box);
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
